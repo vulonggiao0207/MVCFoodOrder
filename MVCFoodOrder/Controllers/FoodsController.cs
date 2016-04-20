@@ -59,6 +59,7 @@ namespace MVCFoodOrder.Controllers
         }
 
         // GET: Foods/Edit/5
+        [HttpGet]
         public ActionResult Edit(int? id)
         {
             if (id == null)
