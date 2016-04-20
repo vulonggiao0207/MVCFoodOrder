@@ -38,7 +38,7 @@
             @Html.DisplayFor(modelItem => item.quantity)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.image)
+            <img src="@Html.DisplayFor(modelItem => item.image)" alt="Food Image" style="width:84px;height:84px;" />
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.FoodID }) |
