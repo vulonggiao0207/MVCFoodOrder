@@ -22,5 +22,7 @@ namespace MVCFoodOrder.Models
     public class FoodDBContext : DbContext
     {
         public DbSet<Food> Foods { get; set; }
+
+        public System.Data.Entity.DbSet<MVCFoodOrder.Models.Orders> Orders { get; set; }
     }
 }
