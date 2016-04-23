@@ -12,12 +12,12 @@ namespace MVCFoodOrder.Controllers
 {
     public class OrdersController : Controller
     {
-        private FoodDBContext db = new FoodDBContext();
+        private OrdersDBContext db = new OrdersDBContext();
 
         // GET: Orders
         public ActionResult Index()
         {
-            return View(db.Orders.ToList());
+            return View(db.OrdersList.ToList());
         }
 
         // GET: Orders/Details/5
@@ -27,7 +27,7 @@ namespace MVCFoodOrder.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Orders orders = db.Orders.Find(id);
+            Orders orders = db.OrdersList.Find(id);
             if (orders == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace MVCFoodOrder.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Orders.Add(orders);
+                db.OrdersList.Add(orders);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace MVCFoodOrder.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Orders orders = db.Orders.Find(id);
+            Orders orders = db.OrdersList.Find(id);
             if (orders == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace MVCFoodOrder.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Orders orders = db.Orders.Find(id);
+            Orders orders = db.OrdersList.Find(id);
             if (orders == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace MVCFoodOrder.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Orders orders = db.Orders.Find(id);
-            db.Orders.Remove(orders);
+            Orders orders = db.OrdersList.Find(id);
+            db.OrdersList.Remove(orders);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

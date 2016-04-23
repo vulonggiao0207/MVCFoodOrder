@@ -12,6 +12,12 @@ namespace MVCFoodOrder.Models
         public int OrderID { get; set; }
         [Display(Name = "Order Name")]
         public string OrderName { get; set; }
+        [Display(Name ="Customer Name")]
+        public string CustomerName { get; set; }
+        [Display(Name = "Address")]
+        public string Address { get; set; }
+        [Display(Name = "Phone")]
+        public string Phone { get; set; }
         [Display(Name = "Order Date")]
         public string OrderDate { get; set; }
         [Display(Name = "Paid")]
